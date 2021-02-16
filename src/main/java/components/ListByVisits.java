@@ -1,15 +1,13 @@
 package components;
 
 import DTO.ListDTO;
+import utility.Initialize;
 
 public class ListByVisits implements MyList {
+	Initialize init = new Initialize();
 
-	public String[] getList() {
-
-		return null;
-	}
-
-	public ListDTO getListByRange(String cat) {
+	public String[] getList(String filter) {
+		init.readDataLineByLine("data.csv");
 		return null;
 	}
 

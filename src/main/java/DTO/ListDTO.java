@@ -2,6 +2,12 @@ package DTO;
 
 public class ListDTO {
 	private String classification;
+	public ListDTO(String classification, String[] urls) {
+		super();
+		this.classification = classification;
+		this.urls = urls;
+	}
+
 	private String[] urls;
 
 	public String getClassification() {

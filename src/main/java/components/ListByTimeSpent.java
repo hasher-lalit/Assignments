@@ -1,16 +1,13 @@
 package components;
 
 import DTO.ListDTO;
+import utility.Initialize;
 
 public class ListByTimeSpent implements MyList{
+	Initialize init = new Initialize();
 
-	public String[] getList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ListDTO getListByRange(String cat) {
-		// TODO Auto-generated method stub
+	public String[] getList(String filter) {
+		init.readDataLineByLine("data.csv");
 		return null;
 	}
 
