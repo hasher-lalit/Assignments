@@ -1,7 +1,5 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import DTO.ListDTO;
 import components.ListByActiveUsers;
 import components.ListByTimeSpent;
 import components.ListByVisits;
@@ -10,6 +8,7 @@ import components.MyList;
 public class Main {
 	static MyList list;
 	static Scanner scan;
+	static int choice = -1;
 
 	public static String getRange() {
 		while (true) {
@@ -31,35 +30,38 @@ public class Main {
 				}
 				}
 			} catch (InputMismatchException exception) {
-				System.out.println("Kindly type numeric value !!" + exception);
+				System.out.println("Kindly type numeric value !!");
 			}
 		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to the Analysis System.");
-		System.out.println("Kindly choose the options from below :");
+		System.out.println("Welcome to the Analysis System.\n");
+		System.out.println("Kindly choose the options from below :\n");
+		scan = new Scanner(System.in);
 		while (true) {
-			System.out.println("1.List of Most Visited Pages");
-			System.out.println("2.List of Most Spent Time On Pages");
-			System.out.println("3.List of Top Active Users");
-			scan = new Scanner(System.in);
+			System.out.println("Enter number of Pages :");
 			try {
+				choice = scan.nextInt();
+				System.out.println("1.List of Most Visited Pages");
+				System.out.println("2.List of Most Spent Time On Pages");
+				System.out.println("3.List of Top Active Users");
+
 				int mainList = scan.nextInt();
 				switch (mainList) {
 				case (1): {
 					list = new ListByVisits();
-					System.out.println(list.getList(getRange()));
+					System.out.println(list.getList(getRange(), choice));
 					break;
 				}
 				case (2): {
 					list = new ListByTimeSpent();
-					System.out.println(list.getList(getRange()));
+					System.out.println(list.getList(getRange(), choice));
 					break;
 				}
 				case (3): {
 					list = new ListByActiveUsers();
-					System.out.println(list.getList(getRange()));
+					System.out.println(list.getList(getRange(), choice));
 					break;
 				}
 				default: {
@@ -67,7 +69,7 @@ public class Main {
 				}
 				}
 			} catch (InputMismatchException exception) {
-				System.out.println("Kindly type numeric value !!" + exception);
+				System.out.println("Kindly type numeric value !!" );
 			}
 
 		}

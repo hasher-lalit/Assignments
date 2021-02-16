@@ -4,5 +4,5 @@ import DTO.ListDTO;
 
 public interface MyList {
 
-	public String[] getList(String filter);
+	public ListDTO[] getList(String filter,int number);
 }

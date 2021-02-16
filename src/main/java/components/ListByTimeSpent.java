@@ -6,7 +6,7 @@ import utility.Initialize;
 public class ListByTimeSpent implements MyList{
 	Initialize init = new Initialize();
 
-	public String[] getList(String filter) {
+	public ListDTO[] getList(String filter,int number) {
 		init.readDataLineByLine("data.csv");
 		return null;
 	}

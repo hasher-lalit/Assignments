@@ -3,22 +3,27 @@ package DTO;
 import java.time.LocalDate;
 
 public class RowDTO {
-	String uuid;
-	String url;
-	int value;
-	LocalDate date;
+	private String uuid;
+	private String url;
+	private int value;
+	private LocalDate date;
 
 	public RowDTO(String uuid, String url, int value, LocalDate date) {
 		super();
 		this.uuid = uuid;
 		this.url = url;
 		this.value = value;
-		this.date = date;
+		this.setDate(date);
+	}
+
+	public RowDTO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "RowDTO [uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + date + "]";
+		return "RowDTO [uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + getDate() + "]";
 	}
 
 	public String getUuid() {
@@ -43,6 +48,14 @@ public class RowDTO {
 
 	public void setValue(int value) {
 		this.value = value;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 }

@@ -3,6 +3,7 @@ package utility;
 import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 
 import com.opencsv.CSVReader;
 
@@ -12,7 +13,7 @@ public class Initialize {
 	static RowDTO list[];
 	static int counter = 0;
 
-	public static RowDTO[] readDataLineByLine(String file) {
+	public RowDTO[] readDataLineByLine(String file) {
 
 		try {
 			FileReader filereader = new FileReader(file);
@@ -29,10 +30,15 @@ public class Initialize {
 				}
 			}
 			System.out.println(Arrays.toString(list));
+			Arrays.sort(list);
+//					new Comparator<RowDTO>() {
+//				public int compare(RowDTO o1, RowDTO o2) {
+//					return o1.getDate().compareTo(o2.getDate());
+//				}
+//			});
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 }
