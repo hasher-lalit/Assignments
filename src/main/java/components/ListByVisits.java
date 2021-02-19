@@ -53,7 +53,7 @@ public class ListByVisits implements MyList {
 			}
 			Map<String, Integer> sortedMap = sortByValue(count);
 			int block = number;
-			List<String> resultUrls = new ArrayList();
+			List<String> resultUrls = new ArrayList<String>();
 			for (Map.Entry<String, Integer> en : sortedMap.entrySet()) {
 				if (block-- == 0)
 					break;

@@ -31,7 +31,18 @@ public class Initialize {
 			}
 //			System.out.println(Arrays.toString(list));
 
-//			Arrays.sort(list);
+			Arrays.sort(list, new Comparator<RowDTO>() {
+
+				public int compare(RowDTO o1, RowDTO o2) {
+					if (o1.getDate().isBefore(o2.getDate()))
+						return -1;
+					else if (o1.getDate().isEqual(o2.getDate())) {
+						return 0;
+					} else {
+						return 1;
+					}
+				}
+			});
 
 		} catch (Exception e) {
 			e.printStackTrace();
