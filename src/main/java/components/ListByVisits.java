@@ -41,7 +41,7 @@ public class ListByVisits implements MyList {
 				continue;
 			}
 			LocalDate date = list[i].getDate();
-			System.out.println(i);
+//			System.out.println(i);
 
 			while (i<list.length&&list[i] != null&&date.equals(list[i].getDate())) {
 				if (count.containsKey(list[i].getUrl())) {

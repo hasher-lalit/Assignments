@@ -22,7 +22,7 @@ public class RowDTO implements Comparable<RowDTO> {
 
 	@Override
 	public String toString() {
-		return "RowDTO [uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + getDate() + "]\n";
+		return "Row[uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + getDate() + "]\n";
 	}
 
 	public String getUuid() {

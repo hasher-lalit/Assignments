@@ -26,10 +26,9 @@ public class Initialize {
 					list[counter++] = new RowDTO(nextRecord[0], nextRecord[2] + nextRecord[11],
 							Integer.parseInt(nextRecord[8]), LocalDate.parse(nextRecord[3]));
 				} catch (NumberFormatException e) {
-//					System.out.println("String found in Numeric");
+					System.out.println("String found in Numeric");
 				}
 			}
-//			System.out.println(Arrays.toString(list));
 
 			Arrays.sort(list, new Comparator<RowDTO>() {
 

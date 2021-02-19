@@ -31,7 +31,7 @@ public class ListDTO {
 
 	@Override
 	public String toString() {
-		return "classification=" + classification + ", urls=" + urls + "]\n";
+		return "Filter :" + classification + ", Urls=[" + urls + "]\n";
 	}
 
 }
