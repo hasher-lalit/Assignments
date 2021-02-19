@@ -1,14 +1,17 @@
 package DTO;
 
+import java.util.*;
+
 public class ListDTO {
 	private String classification;
-	public ListDTO(String classification, String[] urls) {
+
+	public ListDTO(String classification, List<String> urls) {
 		super();
 		this.classification = classification;
 		this.urls = urls;
 	}
 
-	private String[] urls;
+	private List<String> urls;
 
 	public String getClassification() {
 		return classification;
@@ -18,12 +21,17 @@ public class ListDTO {
 		this.classification = classification;
 	}
 
-	public String[] getUrls() {
+	public List<String> getUrls() {
 		return urls;
 	}
 
-	public void setUrls(String[] urls) {
+	public void setUrls(List<String> urls) {
 		this.urls = urls;
+	}
+
+	@Override
+	public String toString() {
+		return "classification=" + classification + ", urls=" + urls + "]\n";
 	}
 
 }

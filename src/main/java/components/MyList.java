@@ -1,8 +1,10 @@
 package components;
 
+import java.util.List;
+
 import DTO.ListDTO;
 
 public interface MyList {
 
-	public ListDTO[] getList(String filter,int number);
+	public List<ListDTO> getList(String filter,int number);
 }

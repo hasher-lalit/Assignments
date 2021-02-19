@@ -2,7 +2,7 @@ package DTO;
 
 import java.time.LocalDate;
 
-public class RowDTO {
+public class RowDTO implements Comparable<RowDTO> {
 	private String uuid;
 	private String url;
 	private int value;
@@ -18,12 +18,11 @@ public class RowDTO {
 
 	public RowDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "RowDTO [uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + getDate() + "]";
+		return "RowDTO [uuid=" + uuid + ", url=" + url + ", value=" + value + ", date=" + getDate() + "]\n";
 	}
 
 	public String getUuid() {
@@ -56,6 +55,10 @@ public class RowDTO {
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+
+	public int compareTo(RowDTO o) {
+		return this.date.compareTo(o.getDate());
 	}
 
 }
